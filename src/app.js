@@ -12,7 +12,14 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false })); // para leer el id enviado en el body junto al archivo de la imagen
-app.use(fileupload());
+app.use(
+  fileupload({
+    limits: {
+      fileSize: 5000000, //5mb
+    },
+    abortOnLimit: true,
+  })
+);
 app.use(express.static('src/public'));
 app.use('/v1/', api);
 

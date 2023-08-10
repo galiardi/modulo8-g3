@@ -25,10 +25,10 @@ async function createImage(req, res) {
   }
 
   // valida tamano del archivo
-  if (file.size > 5 * 1024 * 1024) {
-    response.error = 'File size exceeds limit (5mb)';
-    return res.status(400).send(response);
-  }
+  // if (file.size > 5 * 1024 * 1024) {
+  //   response.error = 'File size exceeds limit (5mb)';
+  //   return res.status(400).send(response);
+  // }
 
   // valida la existencia de la joya
   const jewel = await jewelsModel.get(id_jewel);
@@ -104,10 +104,10 @@ async function updateImage(req, res) {
   }
 
   // valida tamano del archivo
-  if (file.size > 5 * 1024 * 1024) {
-    response.error = 'File size exceeds limit (5mb)';
-    return res.status(400).send(response);
-  }
+  // if (file.size > 5 * 1024 * 1024) {
+  //   response.error = 'File size exceeds limit (5mb)';
+  //   return res.status(400).send(response);
+  // }
 
   // valida la existencia de la joya
   const jewel = await jewelsModel.get(id_jewel);
