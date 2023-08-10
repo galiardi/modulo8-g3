@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "7d25e245-61ac-4ea4-b0cb-1748d084e067",
+		"name": "m8grupal2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "21934336"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/v1/jewels",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"joya20\",\n    \"price\": 30000,\n    \"weight\": 1.5,\n    \"materials\": [\"oro\", \"plata\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/v1/jewels"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/v1/jewels",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "http://localhost:3000/v1/jewels/6"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/v1/jewels/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3000/v1/jewels"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/v1/jewels/2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:3000/v1/jewels/8"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/v1/jewels/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n            \"name\": \"joya100\",\n            \"price\": 4000000,\n            \"weight\": \"200.500\",\n            \"materials\": [\n                \"oro\"\n            ]\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/v1/jewels/10"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/v1/jewels?name=joya100&material=oro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/v1/jewels?name=joya100&material=oro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"jewels"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "joya100"
+						},
+						{
+							"key": "material",
+							"value": "oro"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
