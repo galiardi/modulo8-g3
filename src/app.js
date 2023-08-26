@@ -2,8 +2,10 @@ import express from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
 import morgan from 'morgan';
-import api from './routes/api.js';
 import fileupload from 'express-fileupload';
+import api from './routes/api.js';
+import authRouter from './routes/auth.router.js';
+import { validateToken } from './middlewares/validateToken.js';
 
 const app = express();
 
@@ -21,6 +23,7 @@ app.use(
   })
 );
 app.use(express.static('src/public'));
-app.use('/v1/', api);
+app.use('/v1/', validateToken, api);
+app.use('/auth', authRouter);
 
 export default app;

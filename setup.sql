@@ -30,6 +30,13 @@ create table image(
   foreign key (id_jewel) references jewel(id_jewel)
 );
 
+create table users(
+  id_user serial primary key,
+  name varchar(60) not null,
+  email varchar(60) not null unique,
+  phone varchar(20) not null -- puede incluir +
+);
+
 
 insert into material (name) values ('gold');
 insert into material (name) values ('silver');
